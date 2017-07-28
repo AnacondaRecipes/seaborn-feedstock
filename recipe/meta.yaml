@@ -21,6 +21,10 @@ requirements:
   host:
     - python
     - setuptools
+
+  build:
+    - {{ cdt('mesa-libgl') }}
+
   run:
     - python
     - numpy

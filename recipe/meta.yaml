@@ -21,6 +21,10 @@ requirements:
     - pip
     - python
     - setuptools
+
+  build:
+    - {{ cdt('mesa-libgl') }}
+
   run:
     - python
     - numpy >=1.9.3

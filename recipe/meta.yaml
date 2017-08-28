@@ -23,7 +23,7 @@ requirements:
     - setuptools
 
   build:
-    - {{ cdt('mesa-libgl') }}
+    - {{ cdt('mesa-libgl') }}  # [linux]
 
   run:
     - python

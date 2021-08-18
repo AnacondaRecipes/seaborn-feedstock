@@ -35,8 +35,10 @@ requirements:
 
 test:
   imports:
-    - {{ name }}
-    - scipy
+    - seaborn
+    - seaborn.colors
+    - seaborn.external
+    - seaborn.tests
   commands:
     - pip check
   requires:

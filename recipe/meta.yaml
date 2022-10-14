@@ -1,4 +1,4 @@
-{% set version = "0.11.2" %}
+{% set version = "0.12.0" %}
 {% set name = "seaborn" %}
 {% set sha256 = "cf45e9286d40826864be0e3c066f98536982baf701a7caa386511792d61ff4f6" %}
 

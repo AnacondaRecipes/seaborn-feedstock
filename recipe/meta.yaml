@@ -42,7 +42,6 @@ test:
     - seaborn
     - seaborn.colors
     - seaborn.external
-    - seaborn.tests
   commands:
     - pip check
   requires:

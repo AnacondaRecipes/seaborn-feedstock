@@ -26,7 +26,7 @@ requirements:
     - wheel
 
   run:
-    - python >=3.7
+    - python
     - numpy >=1.17
     - matplotlib >=3.1,!=3.6.1
     - pandas >=0.25

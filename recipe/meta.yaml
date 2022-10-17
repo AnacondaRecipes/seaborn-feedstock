@@ -52,9 +52,10 @@ test:
 
 about:
   home: https://seaborn.pydata.org
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.md
+  license_url: https://github.com/mwaskom/seaborn/blob/master/LICENSE.md
   summary: Statistical data visualization
   description: |
     Seaborn is a Python visualization library based on matplotlib. It

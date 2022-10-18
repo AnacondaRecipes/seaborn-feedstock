@@ -43,6 +43,7 @@ test:
     - seaborn
     - seaborn.colors
     - seaborn.external
+    - seaborn.objects
   commands:
     - pip check
   requires:

@@ -23,8 +23,6 @@ requirements:
   host:
     - pip
     - python
-    - setuptools
-    - wheel
     - flit-core >=3.2,<4
 
   run:

@@ -1,6 +1,5 @@
-{% set version = "0.12.2" %}
+{% set version = "0.13.2" %}
 {% set name = "seaborn" %}
-{% set sha256 = "374645f36509d0dcab895cba5b47daf0586f77bfe3b36c97c607db7da5be0139" %}
 
 package:
   name: {{ name }}
@@ -9,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 93e60a40988f4d65e9f4885df477e2fdaff6b73a9ded434c1ab356dd57eefff7
 
 build:
   number: 0
@@ -59,6 +58,7 @@ about:
     provides a high-level interface for drawing attractive statistical graphics.
   dev_url: https://github.com/mwaskom/seaborn
   doc_url: https://seaborn.pydata.org
+
 extra:
   recipe-maintainers:
     - msarahan

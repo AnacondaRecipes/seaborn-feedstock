@@ -12,8 +12,8 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<37]
-  script: python -m pip install --no-deps --ignore-installed .
+  skip: true  # [py<38]
+  script: python -m pip install --no-deps --ignore-installed . --no-build-isolation
 
 requirements:
   build:
@@ -22,8 +22,6 @@ requirements:
     - pip
     - python
     - flit-core >=3.2,<4
-    - setuptools
-    - wheel
   run:
     - python
     - numpy >=1.20,!=1.24.0
@@ -34,6 +32,8 @@ requirements:
     - statsmodels >=0.12
 
 test:
+  source_files:
+    - tests
   imports:
     - seaborn
     - seaborn.colors
@@ -41,8 +41,10 @@ test:
     - seaborn.objects
   commands:
     - pip check
+    - pytest tests -vv --ignore=tests/test_utils.py::test_load_datasets
   requires:
     - pip
+    - pytest
 
 about:
   home: https://seaborn.pydata.org

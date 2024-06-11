@@ -41,10 +41,11 @@ test:
     - seaborn.objects
   commands:
     - pip check
-    - pytest tests -vv --ignore=tests/test_utils.py::test_load_datasets
+    - pytest tests -vv
   requires:
     - pip
     - pytest
+    - tk
 
 about:
   home: https://seaborn.pydata.org

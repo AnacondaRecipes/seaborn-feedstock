@@ -49,7 +49,7 @@ test:
     - pytest-xdist
     - scipy
     - statsmodels
-    - matplotlib-base
+    - matplotlib
 
 about:
   home: https://seaborn.pydata.org

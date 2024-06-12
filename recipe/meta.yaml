@@ -34,6 +34,7 @@ requirements:
 test:
   source_files:
     - tests
+    - pyproject.toml
   imports:
     - seaborn
     - seaborn.colors
@@ -41,11 +42,14 @@ test:
     - seaborn.objects
   commands:
     - pip check
-    - pytest tests -vv
+    - pytest -n auto tests -vv
   requires:
     - pip
     - pytest
-    - tk
+    - pytest-xdist
+    - scipy
+    - statsmodels
+    - matplotlib-base
 
 about:
   home: https://seaborn.pydata.org

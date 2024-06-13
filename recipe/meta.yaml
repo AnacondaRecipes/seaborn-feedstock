@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   skip: true  # [py<38]
-  script: python -m pip install --no-deps --ignore-installed . --no-build-isolation
+  script: python -m pip install . --no-deps --ignore-installed --no-build-isolation
 
 requirements:
   build:
@@ -34,7 +34,6 @@ requirements:
 test:
   source_files:
     - tests
-    - pyproject.toml
   imports:
     - seaborn
     - seaborn.colors
@@ -46,8 +45,9 @@ test:
   requires:
     - pip
     - pytest
-    - scipy
-    - statsmodels
+    - scipy >=1.7
+    - statsmodels >=0.12
+# Re-adding matplotlib here so qt backend is used instead of tk to avoid `cannot find tcl` error
     - matplotlib
 
 about:

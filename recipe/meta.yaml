@@ -42,11 +42,10 @@ test:
     - seaborn.objects
   commands:
     - pip check
-    - pytest -n auto tests -vv
+    - pytest tests -vv
   requires:
     - pip
     - pytest
-    - pytest-xdist
     - scipy
     - statsmodels
     - matplotlib

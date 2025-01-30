@@ -1,0 +1,23 @@
+--- tests/_core/test_plot.py	2025-01-30 08:27:03.106913696 +0000
++++ "tests/_core/test_plot copy.py"	2025-01-30 09:36:00.084172289 +0000
+@@ -1840,7 +1840,6 @@
+             assert all(t.get_visible() for t in ax.get_yticklabels())
+ 
+     def test_1d_column_wrapped(self):
+-
+         p = Plot().facet(col=["a", "b", "c", "d"], wrap=3).plot()
+         subplots = list(p._subplots)
+ 
+@@ -1852,10 +1851,9 @@
+         for s in subplots[1:]:
+             ax = s["ax"]
+             assert ax.xaxis.get_label().get_visible()
+-            # mpl3.7 added a getter for tick params, but both yaxis and xaxis return
+-            # the same entry of "labelleft" instead of  "labelbottom" for xaxis
++            # mpl3.7 added a getter for tick params with different parameter names
+             if not _version_predates(mpl, "3.7"):
+-                assert ax.xaxis.get_tick_params()["labelleft"]
++                assert ax.xaxis.get_tick_params()["labelbottom"]  # Changed from labelleft to labelbottom
+             else:
+                 assert len(ax.get_xticklabels()) > 0
+             assert all(t.get_visible() for t in ax.get_xticklabels())

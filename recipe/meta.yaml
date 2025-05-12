@@ -7,17 +7,18 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 93e60a40988f4d65e9f4885df477e2fdaff6b73a9ded434c1ab356dd57eefff7
 
 build:
-  number: 2
+  number: 4
   skip: true  # [py<38]
   script: python -m pip install . --no-deps --ignore-installed --no-build-isolation
 
 requirements:
   build:
-    - {{ cdt('mesa-libgl') }}  # [linux]
+    # TODO: map CDT mesa-libgl to new X11 package
+    # - { cdt('mesa-libgl') }
   host:
     - pip
     - python
@@ -42,13 +43,13 @@ test:
   commands:
     - pip check
     # test uses numpy 2 depricated APIs and fails
-    - pytest tests -vv -k "not test_weights and not test_1d_row_wrapped and not test_1d_column_wrapped"
+    - "pytest tests -vv -k \"not test_weights and not test_1d_row_wrapped and not test_1d_column_wrapped\""
   requires:
     - pip
     - pytest
     - scipy >=1.7
     - statsmodels >=0.12
-# Re-adding matplotlib here so qt backend is used instead of tk to avoid `cannot find tcl` error
+    # Re-adding matplotlib here so qt backend is used instead of tk to avoid `cannot find tcl` error
     - matplotlib
 
 about:

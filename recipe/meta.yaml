@@ -24,8 +24,6 @@ requirements:
     - numpy >=1.20,!=1.24.0
     - matplotlib-base >=3.4,!=3.6.1
     - pandas >=1.2
-    # OpneGL support on linux
-    - libgl-devel  # [linux]
   run_constrained:
     - scipy >=1.7
     - statsmodels >=0.12

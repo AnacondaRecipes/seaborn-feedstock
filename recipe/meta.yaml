@@ -6,19 +6,15 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 93e60a40988f4d65e9f4885df477e2fdaff6b73a9ded434c1ab356dd57eefff7
 
 build:
-  number: 4
+  number: 3
   skip: true  # [py<38]
   script: python -m pip install . --no-deps --ignore-installed --no-build-isolation
 
 requirements:
-  build:
-    # TODO: map CDT mesa-libgl to new X11 package
-    # - { cdt('mesa-libgl') }
   host:
     - pip
     - python
@@ -28,6 +24,8 @@ requirements:
     - numpy >=1.20,!=1.24.0
     - matplotlib-base >=3.4,!=3.6.1
     - pandas >=1.2
+    # OpneGL support on linux
+    - libgl-devel  # [linux]
   run_constrained:
     - scipy >=1.7
     - statsmodels >=0.12
